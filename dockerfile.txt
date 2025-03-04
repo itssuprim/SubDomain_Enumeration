@@ -1,0 +1,41 @@
+# Use official Python base image
+FROM python:3.10-slim
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    wget \
+    git \
+    golang \
+    docker.io \
+    mariadb-server \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install security tools
+RUN go install github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest && \
+    go install github.com/tomnomnom/assetfinder@latest && \
+    go install github.com/lc/gau/v2/cmd/gau@latest && \
+    go install github.com/hakluke/hakrawler@latest && \
+    pip install sublist3r knockpy
+
+# Install Findomain
+RUN wget https://github.com/Findomain/Findomain/releases/download/8.2.1/findomain-linux -O /usr/bin/findomain && \
+    chmod +x /usr/bin/findomain
+
+# Copy project files
+COPY . /app
+WORKDIR /app
+
+# Install Python dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Configure MariaDB
+RUN service mysql start && \
+    mysql -e "CREATE DATABASE subdomain_tool;" && \
+    mysql -e "CREATE USER 'root'@'localhost' IDENTIFIED BY 'root';" && \
+    mysql -e "GRANT ALL PRIVILEGES ON subdomain_tool.* TO 'root'@'localhost';" && \
+    mysql -e "FLUSH PRIVILEGES;"
+
+# Entrypoint script
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]

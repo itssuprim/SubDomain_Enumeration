@@ -1,0 +1,11 @@
+services:
+  subenum:
+    build: .
+    volumes:
+      - ./output:/app/output
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - MYSQL_HOST=localhost
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=root
+      - MYSQL_DATABASE=subdomain_tool
