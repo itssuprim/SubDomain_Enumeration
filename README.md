@@ -87,5 +87,6 @@ MIT License
 Feel free to submit pull requests or report issues!
 
 ## Author
-[Your Name] - [LinkedIn/GitHub Profile]
+S Suprim Pandit - [LinkedIn/GitHub Profile]
+
 
