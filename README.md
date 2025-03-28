@@ -6,13 +6,13 @@ The **Subdomain Enumeration CLI Tool** automates the discovery of subdomains for
 
 ## Features
 - **Automated Subdomain Discovery** using multiple tools:
-  - Sublist3r
-  - Subfinder
-  - Assetfinder
-  - Findomain
-  - Knockpy
-  - Hakrawler
-  - Gau
+  - Sublist3r : Finds subdomains using search engines and brute force.
+  - Subfinder : Fast Passsive subdomain enumeration via APIs.
+  - Assetfinder : Scrapes various sources for subdomains. 
+  - Findomain : Fast API-based subdomain discovery.
+  - Knockpy : Brute forces subdomains with a wordlist.
+  - Hakrawler : Crawls URLs, JS files and endpoints
+  - Gau : Retrieves historical URLs from multiple sources.
 - **Parallel Execution** with multithreading to speed up the enumeration process.
 - **Database Integration** with MariaDB for storing results and error logs.
 - **Error Handling & Logging** to track issues during execution.
