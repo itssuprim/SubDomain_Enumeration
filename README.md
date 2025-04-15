@@ -2,7 +2,7 @@
 # Subdomain Enumeration CLI Tool
 
 ## Overview
-The **Subdomain Enumeration CLI Tool** automates the discovery of subdomains for a given domain or IP address. It integrates multiple open-source enumeration tools, processes the results, and stores them in a MariaDB database. The tool efficiently removes duplicates and exports the final results into an Excel file.
+The **Subdomain Enumeration CLI Tool** automates the discovery of subdomains for a given domain or IP address. It integrates multiple open-source enumeration tools, processes the results. The tool efficiently removes duplicates and exports the final results into an Excel file.
 
 ## Features
 - **Automated Subdomain Discovery** using multiple tools:
@@ -14,7 +14,6 @@ The **Subdomain Enumeration CLI Tool** automates the discovery of subdomains for
   - Hakrawler : Crawls URLs, JS files and endpoints
   - Gau : Retrieves historical URLs from multiple sources.
 - **Parallel Execution** with multithreading to speed up the enumeration process.
-- **Database Integration** with MariaDB for storing results and error logs.
 - **Error Handling & Logging** to track issues during execution.
 - **Duplicate Removal** to ensure clean and unique results.
 - **Excel Export** for easy report generation.
@@ -23,16 +22,15 @@ The **Subdomain Enumeration CLI Tool** automates the discovery of subdomains for
 ## Installation
 ### Prerequisites
 - **Python 3.x**
-- **MariaDB** (for storing results)
 - **Docker** (if running Assetfinder & Gau in a container)
 - Required Python packages:
   ```bash
-  pip install tqdm mariadb pandas openpyxl
+  pip install tqdm  pandas openpyxl
   ```
 
 ### Clone the Repository
 ```bash
-git clone https://github.com/yourusername/subdomain-enum-tool.git
+git clone https://github.com/itssuprim/subdomain-enum-tool.git
 cd subdomain-enum-tool
 ```
 
