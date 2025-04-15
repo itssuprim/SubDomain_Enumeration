@@ -70,13 +70,11 @@ Modify `db_config` in the script if needed.
 
 ## Output
 - Subdomains are saved in the output directory.
-- Data is stored in MariaDB.
 - Final results are exported to `subdomain_enumeration_results.xlsx`.
 
 ## Troubleshooting
 - **No output from Gau & Assetfinder?** Ensure Docker is running and the commands work manually.
 - **ModuleNotFoundError for Pandas?** Run `pip install pandas`.
-- **Database connection issues?** Verify MariaDB credentials and that the database exists.
 
 ## License
 MIT License
